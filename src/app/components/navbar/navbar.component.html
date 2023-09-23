@@ -1,0 +1,19 @@
+<header>
+  <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <a class="d-flex align-items-center text-dark text-decoration-none" href="/">
+      <span class="bi bi-check todo-logo"></span>
+      <span class="fs-4">TODOS</span>
+    </a>
+
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <ng-template [ngIf]="isLoggedIn">
+        <a class="me-3 py-2 text-dark " routerLink="todos">Profile</a>
+        <a class="py-2 text-dark " routerLink="logout">Logout</a>
+      </ng-template>
+      <ng-template [ngIf]="!isLoggedIn">
+        <a class="me-3 py-2 text-dark " routerLink="register">Register</a>
+        <a class="py-2 text-dark " routerLink="login">Login</a>
+      </ng-template>
+    </nav>
+  </div>
+</header>

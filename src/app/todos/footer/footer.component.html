@@ -1,0 +1,38 @@
+<div class="p-2">
+	<div class="d-flex justify-content-between">
+		<div>
+			<span>Filters: </span>
+			<span class="">
+				<input type="radio"
+					name="filter"
+					class="btn-check"
+					id="btn-check-4"
+					[ngClass]="{ checked: (filter$ | async) === filters.all }"
+					(click)="changeFilter(filters.all)" />
+				<label class="btn btn-sm"
+					for="btn-check-4">All</label>
+
+				<input type="radio"
+					name="filter"
+					class="btn-check"
+					id="btn-check-6"
+					[ngClass]="{ checked: (filter$ | async) === filters.active }"
+					(click)="changeFilter(filters.active)" />
+				<label class="btn btn-sm"
+					for="btn-check-6">Actives</label>
+
+				<input type="radio"
+					name="filter"
+					class="btn-check"
+					id="btn-check-5"
+					[ngClass]="{ checked: (filter$ | async) === filters.completed }"
+					(click)="changeFilter(filters.completed)" />
+				<label class="btn btn-sm"
+					for="btn-check-5">Completed</label>
+			</span>
+		</div>
+		<div class="fs-10 p-2">
+			{{activeCount$ | async}} Remaining
+		</div>
+	</div>
+</div>

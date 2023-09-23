@@ -1,0 +1,49 @@
+<div class="row center-block justify-content-center">
+  <div class="col-6">
+    <form #loginForm=ngForm (ngSubmit)="submitForm()">
+      <h1 class="h3 mb-3 fw-normal">Please register</h1>
+
+      <div *ngIf="errors && errors?.general" class="form-text" id="basic-addon4">
+        {{errors.general}}
+      </div>
+      <div class="form-floating">
+        <input class="form-control" name="email" [(ngModel)]="form.email" 
+        id="floatingInput" placeholder="name@example.com" type="email" required>
+        <label for="floatingInput">Email address</label>
+        <div *ngIf="errors && errors?.email" class="form-text" id="basic-addon4">
+          {{errors.email[0]}}
+        </div>
+      </div>
+
+      <div class="form-floating">
+        <input class="form-control" name="name" [(ngModel)]="form.name" 
+        id="floatingInput" placeholder="name@example.com" type="input" required>
+        <label for="floatingInput">Name</label>
+        <div *ngIf="errors && errors?.name" class="form-text" id="basic-addon4">
+          {{errors.name[0]}}
+        </div>
+      </div>
+
+
+      <div class="form-floating">
+        <input class="form-control" name="password" [(ngModel)]="form.password" 
+        id="floatingPassword" placeholder="Password" type="password" required>
+        <label for="floatingPassword">Password</label>
+        <div *ngIf="errors && errors?.password" class="form-text" id="basic-addon4">
+          {{errors.password[0]}}
+        </div>
+      </div>
+
+      <div class="form-floating">
+        <input class="form-control" name="password" [(ngModel)]="form.password_confirmation" 
+        id="floatingPassword" placeholder="Password" type="password" required>
+        <label for="floatingPassword">Password</label>
+        <div *ngIf="errors && errors?.password" class="form-text" id="basic-addon4">
+          {{errors.password[0]}}
+        </div>
+      </div>
+
+      <button class="btn btn-primary w-100 py-2" type="submit" [disabled]="!loginForm.valid">Register</button>
+    </form>
+  </div>
+</div>

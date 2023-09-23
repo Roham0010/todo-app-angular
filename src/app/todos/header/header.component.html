@@ -1,0 +1,5 @@
+<input (keyup)="changeText($event)" (keyup.enter)="addTodo()"
+       [value]="text"
+       autofocus
+       class="form-control form-control-lg" placeholder="new todo..."
+       type="text"/>

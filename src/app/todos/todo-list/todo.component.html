@@ -1,0 +1,12 @@
+<div class="card col-12 mb-3 todo-list">
+  <app-todos-header></app-todos-header>
+  <ul class="list-group todo-list">
+    <div class="no-content"
+      *ngIf="(todosCount$ | async) == 0">
+      No todos yet, add some!
+    </div>
+    <app-todo-item *ngFor="let todo of todosToShow$ | async"
+      [todo]="todo"></app-todo-item>
+  </ul>
+  <app-todos-footer></app-todos-footer>
+</div>
